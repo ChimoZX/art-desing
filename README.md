@@ -18,10 +18,10 @@ The main goal was to build a UI that doesn't just look good, but feels fluid and
 
 ```bash
 # Clone the repo
-git clone [https://github.com/ChimoZX/NOMBRE-DE-TU-REPO-AQUI.git](https://github.com/ChimoZX/NOMBRE-DE-TU-REPO-AQUI.git)
+git clone https://github.com/ChimoZX/art-desing.git
 
 # Go into the project
-cd NOMBRE-DE-TU-REPO-AQUI
+cd art-desing
 
 # Install dependencies
 npm install
