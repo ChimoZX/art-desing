@@ -4,7 +4,7 @@ A modern frontend concept for an artisan bakery, built entirely with React, Type
 
 The main goal was to build a UI that doesn't just look good, but feels fluid and responsive, bringing it all to life with Framer Motion for the animations and micro-interactions.
 
-**[ View Live Demo ](https://art-dulce.vercel.app/)**
+**[ View ](https://art-dulce.vercel.app/)**
 
 
 ###  Tech Stack
