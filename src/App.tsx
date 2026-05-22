@@ -4,7 +4,7 @@ import {
   MapPin, ArrowUpRight, Star, ChefHat, Instagram, Facebook, Clock, ShoppingBag, CheckCircle2, Heart 
 } from 'lucide-react';
 
-// --- DATA ---
+
 const features = [
   {
     title: "Red Velvet Royal",
@@ -169,7 +169,7 @@ const Card = ({ i, title, description, price, img, color, rotation, progress, ra
         }} 
         className="relative flex flex-col md:flex-row h-[65vh] md:h-[550px] w-full max-w-6xl rounded-[3rem] p-6 md:p-12 origin-top shadow-2xl border border-white/80 overflow-hidden"
       >
-        {/* Imagen con profundidad 3D y efecto zoom */}
+
         <motion.div 
           className="w-full md:w-1/2 h-1/2 md:h-full rounded-[2rem] overflow-hidden relative shadow-inner bg-white"
           style={{ transform: "translateZ(40px)" }}
@@ -197,7 +197,7 @@ const Card = ({ i, title, description, price, img, color, rotation, progress, ra
             />
           </motion.div>
           
-          {/* Efecto de lupa overlay */}
+
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
@@ -226,7 +226,7 @@ const Card = ({ i, title, description, price, img, color, rotation, progress, ra
             {price}
           </motion.div>
           
-          {/* Icono de lupa cuando se hace hover */}
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ 
@@ -292,7 +292,6 @@ const Card = ({ i, title, description, price, img, color, rotation, progress, ra
           </div>
         </div>
         
-        {/* Efecto de partículas flotantes sutiles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(5)].map((_, idx) => (
             <motion.div
@@ -336,7 +335,7 @@ const MapCard = () => (
   </div>
 );
 
-// --- APP PRINCIPAL ---
+
 const App = () => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({ target: container, offset: ['start start', 'end end'] });
@@ -344,7 +343,7 @@ const App = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(null);
 
-  // Auto-slider de historia
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % historySlides.length);
@@ -363,12 +362,11 @@ const App = () => {
 
   return (
     <div className="relative selection:bg-pink-200 selection:text-rose-900">
-      {/* Film grain texture */}
+
       <div className="noise-overlay"></div>
       
       <Navbar />
 
-      {/* --- HERO SECTION --- */}
       <header className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20 overflow-hidden">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-pink-100/50 to-transparent rounded-full blur-[100px] -z-10"></div>
          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center z-10 max-w-5xl mx-auto">
@@ -391,7 +389,6 @@ const App = () => {
          </motion.div>
       </header>
 
-      {/* --- MARQUEE ELEGANTE --- */}
       <div className="py-10 bg-white/40 border-y border-white/60 backdrop-blur-sm overflow-hidden relative z-20">
         <div className="marquee-container">
           <motion.div 
@@ -432,7 +429,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* --- SECCIÓN HISTORIA (AUTO-SLIDER) --- */}
       <section id="historia" className="py-32 px-6 max-w-7xl mx-auto overflow-hidden">
         <div className="grid md:grid-cols-2 gap-20 items-center min-h-[600px]">
           <div className="relative group h-[500px] md:h-[600px]">
@@ -467,7 +463,6 @@ const App = () => {
             </div>
           </div>
           
-          {/* Sección de texto SIN efectos de flotación */}
           <div className="space-y-8 relative">
             <div key={`text-${currentSlide}`} className="relative">
               <span className="text-pink-600 font-bold tracking-widest uppercase text-sm bg-pink-100 px-3 py-1 rounded-full w-fit block mb-4">
@@ -485,13 +480,13 @@ const App = () => {
         </div>
       </section>
 
-      {/* --- SECCIÓN MENU (STACKING CARDS) --- */}
+      {/* (STACKING CARDS)  */}
       <section id="menu" className="py-20 relative">
         <div className="text-center mb-4 px-4">
           <h2 className="text-5xl md:text-7xl font-display font-bold text-rose-950 mb-2 uppercase">Obras Maestras</h2>
           <p className="text-xl text-rose-800/60 italic font-medium tracking-wide">Desliza para descubrir nuestra colección</p>
         </div>
-        {/* Contenedor compacto */}
+
         <div ref={container} className="relative pb-64 snap-y snap-mandatory h-full -mt-16">
           {features.map((feature, i) => {
             const targetScale = 1 - ((features.length - i) * 0.05); 
@@ -500,7 +495,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* --- GRID RÁPIDO --- */}
+
       <section className="py-24 bg-white/50 backdrop-blur-sm border-y border-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
@@ -556,7 +551,6 @@ const App = () => {
         </div>
       </section>
 
-      {/* --- UBICACIÓN Y FORMULARIO --- */}
       <section id="ubicacion" className="py-24 px-6 max-w-7xl mx-auto scroll-mt-24">
          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 bg-white p-12 rounded-[3rem] shadow-xl border border-rose-100 relative overflow-hidden">
            <div className="absolute top-0 right-0 w-96 h-96 bg-pink-100 rounded-full blur-[100px] opacity-50 pointer-events-none"></div>
